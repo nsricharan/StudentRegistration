@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="footer.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Register</a>
+        <a href="contact.html">Contact</a>
+        <a class="icon" onclick="toggleNavbar()">&#9776;</a>
+    </div>
+
+    <h2>Student Registration</h2>
+    <form method="post" action="success.php">
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('enrollment-section')">Date of Enrollment</div>
+            <div class="section-content" id="enrollment-section">
+                <label for="enrollment_date">Date of Enrollment:</label>
+                <input type="date" name="enrollment_date" required>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('personal-details-section')">Personal Details</div>
+            <div class="section-content" id="personal-details-section">
+                <div>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" placeholder="First Name" required pattern="[A-Za-z\s]{1,}">
+                </div>
+                <div>
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" name="middle_name" placeholder="Middle Name" pattern="[A-Za-z\s]{1,}">
+                </div>
+                <div>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" placeholder="Last Name" required pattern="[A-Za-z\s]{1,}">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('address-details-section')">Address Details</div>
+            <div class="section-content" id="address-details-section">
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" required>
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" required>
+                </div>
+                <div>
+                    <label for="county">County:</label>
+                    <input type="text" name="county" required>
+                </div>
+                <div>
+                    <label for="area_code">Area Code:</label>
+                    <input type="text" name="area_code" required>
+                </div>
+                <div>
+                    <label for="zip">Zip:</label>
+                    <input type="text" name="zip" required>
+                </div>
+                <div>
+                    <label for="country">Country:</label>
+                    <input type="text" name="country" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('contact-details-section')">Contact Details</div>
+            <div class="section-content" id="contact-details-section">
+                <div>
+                    <label for="country_code">Country Code:</label>
+                    <select name="country_code" style="width: 100%;">
+                        <option value="usa">+1 USA</option>
+                        <option value="ind">+91 IND</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" name="phone" placeholder="Phone Number (XXX)-XXX XXXX" required pattern="^\d{10}$">
+                </div>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('emergency-contact-section')">Emergency Contact Details</div>
+            <div class="section-content" id="emergency-contact-section">
+                <div>
+                    <label for="relation_type">Relation Type:</label>
+                    <select name="relation" style="width: 100%;">
+                        <option value="father">Father</option>
+                        <option value="mother">Mother</option>
+                        <option value="guardian">Guardian</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="emergency_country_code">Emergency Country Code:</label>
+                    <select name="emergency_country_code" style="width: 100%;">
+                        <option value="usa">+1 USA</option>
+                        <option value="ind">+91 IND</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="emergency_phone">Emergency Phone Number:</label>
+                    <input type="tel" name="emergency_phone" placeholder="Phone Number (XXX)-XXX XXXX" required pattern="^\d{10}$">
+                </div>
+                <div>
+                    <label for="emergency_email">Emergency Email Address:</label>
+                    <input type="email" name="emergency_email" placeholder="Email Address" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('gendersection')">Gender & Race/Ethnicity</div>
+            <div class="section-content" id="gendersection">
+                <div>
+                    <label for="gender">Gender</label>
+                    <select name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="race">Race/Ethnicity</label>
+                    <select name="race">
+                        <option value="Aboriginal">Aboriginal</option>
+                        <option value="african">African American or Black</option>
+                        <option value="Asian">Asian</option>
+                        <option value="american">European American or White</option>
+                        <option value="namerican">Native American</option>
+                        <option value="hawain">Native Hawaiian or Pacific Islander</option>
+                        <option value="Māori">Māori</option>
+                        <option value="other">Some other race</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('course-selection-section')">Course Selection</div>
+            <div class="section-content" id="course-selection-section">
+                <div>
+                    <label for="course_level">Course Level:</label>
+                    <select name="course_level">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course_date">Course Date:</label>
+                    <select name="course_date" style="width: 100%;">
+                        <option value="course1">Course 1: Starts from 11/10/2023</option>
+                        <option value="course2">Course 2: Starts from 11/19/2023</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course_location">Course Location:</label>
+                    <select name="course_location">
+                        <option value="online">Online</option>
+                        <option value="onground">On Ground</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('payment-method-section')">Payment Method</div>
+            <div class="section-content" id="payment-method-section">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" onchange="showPaymentSection()">
+                    <option value="paypal">PayPal</option>
+                    <option value="debitcard">Debit/Credit Card</option>
+                </select>
+
+                <div id="paypal-section" class="payment-section">
+                    <p>Click the button below to be redirected to PayPal for payment.</p>
+                    <div class="button-container">
+                        <button type="button">Proceed to PayPal</button>
+                    </div>
+                </div>
+
+                <div id="debitcard-section" class="payment-section">
+                    <label for="debit-card-number">Debit/Credit Card Number:</label>
+                    <input type="text" name="debit-card-number" placeholder="Enter Debit Card Number" required><br>
+                    <label for="debit-card-expiry">Expiry Date:</label>
+                    <input type="text" name="debit-card-expiry" placeholder="MM/YY" required><br>
+                    <label for="debit-card-cvv">CVV:</label>
+                    <input type="text" name="debit-card-cvv" placeholder="CVV" required><br>
+                    <label for="debit-card-name">Cardholder's Name:</label>
+                    <input type="text" name="debit-card-name" placeholder="Cardholder's Name" required><br>
+                    <div class="button-container">
+                        <button type="button">Pay with Card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div style="text-align: center;">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <footer>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h4>Our School</h4>
+                    <img src="images/pi-1453836_1280.jpg" alt="">
+                </div>
+        
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt icon"></i>123 Main Street, Cityville</p>
+                    <p><i class="fas fa-phone icon"></i>+1 (123) 456-7890</p>
+                    <p><i class="fas fa-envelope icon"></i>info@ourschool.com</p>
+                </div>
+        
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+        
+            </div>
+        </footer>
+</body>
+</html>
